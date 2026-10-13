@@ -1,12 +1,12 @@
 # Powerhouse AI Church Chatbot
 
-A Python starter for a church information assistant, service schedule, Bible reference lookup, reminders, and appointment workflows.
+A Python starter for a church information assistant with a Telegram interface and local command-line fallback.
 
 ## Features
 
-- Interactive local menu for church information, schedules, and Bible references
+- Telegram commands: `/start`, `/info`, `/schedule`, `/bible`, `/appointment`, and `/help`
+- Local menu for church information, service schedules, and Bible references
 - Environment-based church details
-- Appointment and reminder validation helpers
 - No API keys or personal information committed to the repository
 
 ## Run locally
@@ -20,20 +20,22 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Copy `.env.example` to `.env`, fill in only approved public church information, then run:
+Copy `.env.example` to `.env`. To use Telegram, create a bot through Telegram's official BotFather and put its token in `TELEGRAM_BOT_TOKEN`. Add only church-approved public details to the other settings. Then run:
 
 ```bash
 python app.py
 ```
 
+If `TELEGRAM_BOT_TOKEN` is empty, the local menu starts. If a token is configured, the Telegram bot starts.
+
 ## Important limitations
 
-This is a starter, not a deployed AI chatbot. Scripture lookup accepts a reference but does not retrieve verse text. Reminders are not scheduled or sent, and appointment requests are not transmitted or stored. Service times marked “Confirm locally” must be verified by church leadership.
+This is not yet a generative-AI system. Scripture lookup accepts a reference but does not retrieve verse text. Appointment requests are not automatically booked or stored, and reminders are not scheduled or sent. Service times marked “Confirm locally” must be verified by church leadership.
 
-Before connecting WhatsApp, Telegram, email, a language model, or a scripture provider, add access controls, consent, privacy safeguards, rate limits, monitoring, and tests. Do not collect confidential pastoral or member information in this public repository.
+Before connecting a language model, appointment calendar, reminder provider, or scripture API, add access controls, consent, privacy safeguards, rate limits, monitoring, and tests. Do not collect confidential pastoral or member information in this public repository.
 
 ## Structure
 
-- `app.py` — local assistant menu and workflow helpers
+- `app.py` — Telegram handlers and local menu
 - `.env.example` — safe configuration template
-- `requirements.txt` — minimal dependency list
+- `requirements.txt` — Python dependencies

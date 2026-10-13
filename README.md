@@ -1,35 +1,39 @@
-# Powerhouse-AI-Church-Chatbot
+# Powerhouse AI Church Chatbot
 
-A Python-based AI assistant for church information, scripture lookup, service schedules, reminders, and appointment workflows.
+A Python starter for a church information assistant, service schedule, Bible reference lookup, reminders, and appointment workflows.
 
-## What this starter includes
+## Features
 
-- Safe placeholder functions for church information and scripture lookup
-- A service schedule interface ready for a real data source
-- Reminder and appointment workflow structures
-- Environment-based configuration with no secrets committed
+- Interactive local menu for church information, schedules, and Bible references
+- Environment-based church details
+- Appointment and reminder validation helpers
+- No API keys or personal information committed to the repository
 
-## Quick start
+## Run locally
 
-1. Create a virtual environment: python -m venv .venv
-2. Activate it and install dependencies: pip install -r requirements.txt
-3. Copy .env.example to .env and replace placeholders locally.
-4. Run python app.py.
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-The included functions intentionally return safe placeholder responses. Connect approved church data, a scripture provider, and a messaging channel only after adding authentication, input validation, rate limiting, and privacy controls.
+Copy `.env.example` to `.env`, fill in only approved public church information, then run:
 
-## Project structure
+```bash
+python app.py
+```
 
-- app.py - starter application and workflow functions
-- .env.example - configuration template without credentials
-- requirements.txt - minimal Python dependencies
+## Important limitations
 
-## Safety and privacy
+This is a starter, not a deployed AI chatbot. Scripture lookup accepts a reference but does not retrieve verse text. Reminders are not scheduled or sent, and appointment requests are not transmitted or stored. Service times marked “Confirm locally” must be verified by church leadership.
 
-Never commit .env, API keys, tokens, personal appointment details, or production data. Review responses for pastoral sensitivity and obtain consent before storing reminders or appointment information.
+Before connecting WhatsApp, Telegram, email, a language model, or a scripture provider, add access controls, consent, privacy safeguards, rate limits, monitoring, and tests. Do not collect confidential pastoral or member information in this public repository.
 
-## Status
+## Structure
 
-Starter project for iterative development. Replace the placeholders with tested integrations and deployment configuration as requirements become clear.
-# Powerhouse-AI-Church-Chatbot
-A Python-based AI assistant for church information, scripture lookup, service schedules, reminders, and appointment workflows.
+- `app.py` — local assistant menu and workflow helpers
+- `.env.example` — safe configuration template
+- `requirements.txt` — minimal dependency list

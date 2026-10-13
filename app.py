@@ -117,7 +117,7 @@ def run_cli() -> None:
             for item in get_service_schedule():
                 print(f"- {item['day']} | {item['time']} | {item['service']}")
         elif choice == "3":
-            print(lookup_scripture(input("Enter a Bible reference (e.g. John 3:16): "))
+            print(lookup_scripture(input("Enter a Bible reference (e.g. John 3:16): ")))
         elif choice == "4":
             print("Goodbye.")
             break
